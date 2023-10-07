@@ -23,7 +23,7 @@ def upload_video():
     frame_height = int(source.get(4))
     size = (frame_width,frame_height)
     result = cv2.VideoWriter('static/'+'blackandwhite.mp4',
-        cv2.VideoWriter_fourcc(*'mp4v'),fps=30,size,0)
+        cv2.VideoWriter_fourcc(*'mp4v'),30, size,0)
 
     try:
         while True:
@@ -44,11 +44,6 @@ def upload_video():
 def download_file():
     converted_file_path = 'static/blackandwhite.mp4'
     return send_file(converted_file_path,as_attachment=True)
-
-
-
-
-
 
 # Code for Project 265 download funcion ends here
 
